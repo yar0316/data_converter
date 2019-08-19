@@ -1,6 +1,7 @@
 /**
  * 改行をカンマ区切りに変換する
- * @param {String} input 入力された文字列
+ * @param {string} input 入力された文字列
+ * @returns {string} カンマ区切りに変換された文字列
  */
 function conversion(input) {
 

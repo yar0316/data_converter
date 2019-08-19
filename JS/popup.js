@@ -1,3 +1,6 @@
+/**
+ * 各種イベント処理
+ */
 $(function() {
   var c_flag = true;
 
@@ -18,7 +21,7 @@ $(function() {
   shortcut.add("ctrl+enter", function() {
     $("#exec").click();
   });
-  //Ctrl
+  //Ctrl+Cショートカット(テキストエリアの中身をこぴー)
   shortcut.add("ctrl+c", function() {
     $("#copy").click();
   });
