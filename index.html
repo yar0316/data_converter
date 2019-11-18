@@ -3,23 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body style="width: 370px;">
+    <div id="app">
+      <center>
+        <h3>テキストを貼り付けて、<br />変換を実行してください</h3>
+        <textarea id="input" cols="20" rows="15"></textarea>
+        <p>
+          <button id="copy" class="btn" data-clipboard-target="#input">Copy to Clipboard(Ctrl+C)</button>
+        </p>
+        {{ convertedData }}
+      </center>
+    </div>
+    <!-- <a href="src/help.html">使い方を見る</a> -->
+
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="src/js/vueApp.js"></script>
     <script src="src/dist/jquery-3.4.1.min.js"></script>
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script src="src/dist/clipboard.min.js"></script>
-    <script src="src/dist/shortcut.js"></script>
-    <script src="src/js/popup.js"></script>
     <script src="src/js/conversion.js"></script>
-    <script src="src/js/clipboard_copy.js"></script>
-  </head>
-  <body style="width: 370px;">
-    <center>
-      <h3>テキストを貼り付けて、<br />変換を実行してください</h3>
-      <textarea id="input" cols="20" rows="20"></textarea>
-      <p>
-        <input type="button" id="exec" value="Go(Ctrl+Enter)" />
-        <button id="copy" class="btn" data-clipboard-target="#input">Copy to Clipboard(Ctrl+C)</button>
-      </p>
-    </center>
-    <!-- <a href="help.html">使い方を見る</a> -->
+    <script src="src/js/clipboardCopy.js"></script>
   </body>
 </html>
