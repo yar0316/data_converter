@@ -10,9 +10,11 @@
   "author": "yar0316",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^7.1.1"
+    "electron": "^7.1.1",
+    "electron-builder": "^21.2.0"
   },
   "dependencies": {
     "jquery": "^3.4.1"
-  }
+  },
+  "repository":"converter"
 }
