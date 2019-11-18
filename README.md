@@ -9,6 +9,49 @@
 個人用で配布はしていないので、お好きな形式のブランチで`git clone`してビルドして使ってください。というか配布できるような出来のものでは断じてない。ブランチの名前見ればだいたいどんな形式かはわかると思います。`master`ブランチはChrome拡張版です。
 なんでPublicなのかって？Wikiの実験のためさ。
 
+#### リポジトリのクローン・ブランチの移動
+
+```
+$ git clone https://github.com/yar0316/data_converter.git
+$ git checkout electron
+```
+
+#### ビルドせずに起動
+
+ビルドせずに起動する場合は、プロジェクトのルートから行ってください。`Node.js`はインストールされている前提です。
+```
+$ npx electron data_converter
+```
+
+#### ビルドして起動
+
+まずはビルドから。`electron-builder`は入っているので、ビルド用のJSファイルを作成します。
+以下は一例です。`appId`は任意で決めてください。
+まだMac用にビルドしてないのでそっちはおいおい追加。
+
+windows:
+``` build-win.js
+const builder = require('electron-builder');
+
+builder.build({
+  config: {
+    'appId': 'com.example.data_converter',
+    'win':{
+      'target': {
+        'target': 'nsis',
+        'arch': [
+          'x64',
+          'ia32'
+        ]
+      }
+    }
+  }
+});
+```
+
+インストーラが`dist`ディレクトリに作成されます。`zip`ファイルにしたい場合は`target`を`zip`に変更してください。
+あとはインストールするなり回答するなりしてできた`.exe`を開くだけ。
+
 ### ツールの使用
 
 改行をカンマ区切りに変換し、クリップボードにコピーします。
