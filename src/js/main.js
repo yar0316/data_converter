@@ -17,8 +17,6 @@ function createWindow () {
   // and load the index of the app.
   appWindow.loadFile('index.html')
 
-  appWindow.webContents.openDevTools()
-
   // Emitted when the window is closed.
   appWindow.on('closed', () => {
     appWindow = null
